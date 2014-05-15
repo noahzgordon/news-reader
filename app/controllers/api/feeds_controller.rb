@@ -1,9 +1,10 @@
-class FeedsController < ApplicationController
+class Api::FeedsController < ApplicationController
   def index
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render :json => Feed.all }
-    end
+    render :json => Feed.all
+  end
+
+  def show
+    render :json => Feed.find(params[:id])
   end
 
   def create
@@ -16,6 +17,7 @@ class FeedsController < ApplicationController
   end
 
   private
+
   def feed_params
     params.require(:feed).permit(:title, :url)
   end

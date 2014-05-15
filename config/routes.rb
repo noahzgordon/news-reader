@@ -1,7 +1,9 @@
 NewReader::Application.routes.draw do
-  resources :feeds, only: [:index, :create] do
-    resources :entries, only: [:index]
+  namespace :api do
+    resources :feeds, only: [:index, :create, :show] do
+      resources :entries, only: [:index]
+    end
   end
 
-  root to: "feeds#index"
+  root to: "static_pages#index"
 end

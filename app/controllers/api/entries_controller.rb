@@ -1,4 +1,4 @@
-class EntriesController < ApplicationController
+class Api::EntriesController < ApplicationController
   def index
     feed = Feed.find(params[:feed_id])
     render :json => feed.entries
@@ -6,7 +6,8 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry)
+    params.
+      require(:entry)
       .permit(:guid, :link, :published_at, :title, :json, :feed_id)
   end
 end
