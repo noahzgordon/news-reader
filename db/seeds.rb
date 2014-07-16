@@ -9,9 +9,9 @@
 #
 
 urls = [
-  'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
   'http://feeds.wired.com/wired/index',
-  'http://www.npr.org/rss/rss.php?id=1001'
+  'http://www.npr.org/rss/rss.php?id=1001',
+  'http://qz.com/feed/'
 ]
 
 urls.each do |url|
