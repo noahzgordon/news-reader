@@ -1,2 +1,2 @@
 <strong><%= entry.escape("published_at").slice(11, -5) %>:</strong>
-<%= entry.escape("title") %>
+<a href="<%= entry.get("link") %>"><%= entry.escape("title") %></a>

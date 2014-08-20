@@ -1,14 +1,16 @@
 class Api::FeedsController < ApplicationController
+  before_action :require_signed_in
+
   def index
-    render :json => Feed.all
+    render :json => current_user.feeds.all
   end
 
   def show
-    render :json => Feed.find(params[:id]), include: :latest_entries
+    render :json => current_user.feeds.find(params[:id]), include: :latest_entries
   end
 
   def create
-    feed = Feed.find_or_create_by_url(feed_params[:url])
+    feed = current_user.feeds.find_or_create_by_url(feed_params[:url])
     if feed
       render :json => feed
     else
@@ -17,7 +19,7 @@ class Api::FeedsController < ApplicationController
   end
 
   def destroy
-    feed = Feed.find(params[:id])
+    feed = current_user.feeds.find(params[:id])
 
     if feed.destroy
       render :json => feed

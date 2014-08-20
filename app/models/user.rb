@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  has_many :feeds
+
   def self.generate_token
     SecureRandom::urlsafe_base64
   end

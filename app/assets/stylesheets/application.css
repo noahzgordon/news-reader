@@ -61,6 +61,11 @@ header > h1 {
   color: #fff;
 }
 
+header > p {
+  color: #fff;
+  padding: 10px;
+}
+
 form {
   width: 400px;
   margin: auto;
