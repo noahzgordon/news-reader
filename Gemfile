@@ -44,6 +44,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'simple-rss'
+gem 'backbone-on-rails'
 group :development, :test do
   gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
