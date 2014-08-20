@@ -13,7 +13,7 @@ class Feed < ActiveRecord::Base
       feed_data.entries.each do |entry_data|
         Entry.create_from_json!(entry_data, feed)
       end
-    rescue SimpleRSSError
+    rescue
       return nil
     end
 
@@ -33,7 +33,7 @@ class Feed < ActiveRecord::Base
       end
 
       self
-    rescue SimpleRSSError
+    rescue
       return false
     end
   end

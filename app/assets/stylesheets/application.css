@@ -11,3 +11,83 @@
  *= require_self
  *= require_tree .
  */
+
+html, body, div, ul, li, a, h1, form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.group:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+h1, h2, h3, p, a, input, li {
+  font-family: Helvetica;
+}
+
+h1 {
+  padding: 30px;
+  text-align: center;
+  font-size: 40px;
+}
+
+li{
+  padding: 10px;
+}
+
+#content{
+  width: 700px;
+  margin: auto;
+  background: #C5FFFD;
+  padding: 50px;
+}
+
+header {
+  width: 800px;
+  margin: auto;
+  background: #425F77;
+}
+
+header > h1 {
+  background: #425F77;
+  color: #fff;
+}
+
+form {
+  width: 400px;
+  margin: auto;
+}
+
+form > label {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+form > input {
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+
+footer{
+  width: 800px;
+  margin: auto;
+  background: #A9D0E1;
+}
+
+footer li {
+  display: block;
+  float: left;
+  margin: 20px;
+}
+
