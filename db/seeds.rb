@@ -8,6 +8,8 @@
 #
 #
 
+user = User.create(username: "noah", password: "noahnoah")
+
 urls = [
   'http://feeds.wired.com/wired/index',
   'http://www.npr.org/rss/rss.php?id=1001',
@@ -15,5 +17,5 @@ urls = [
 ]
 
 urls.each do |url|
-  Feed.find_or_create_by_url url
+  user.feeds.find_or_create_by_url url
 end

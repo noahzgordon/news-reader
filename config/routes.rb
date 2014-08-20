@@ -1,6 +1,6 @@
 NewReader::Application.routes.draw do
   namespace :api do
-    resources :feeds, only: [:index, :create, :show, :destroy] do
+    resources :feeds, except: [:new, :edit] do
       resources :entries, only: [:index]
     end
   end

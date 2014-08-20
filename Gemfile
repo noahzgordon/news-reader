@@ -44,6 +44,8 @@ gem 'bcrypt'
 # gem 'debugger', group: [:development, :test]
 gem 'simple-rss'
 gem 'backbone-on-rails'
+gem 'marked-rails'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'

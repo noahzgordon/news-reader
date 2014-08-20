@@ -1,5 +1,13 @@
 <% feeds.each(function(feed){ %>
   <li>
+   <span data-id="<%= feed.id %>" class="fav-star">
+      <% if (!feed.get("favorite")){ %>
+        ☆
+      <% } else { %>
+        ★
+      <% } %>
+    </span>
+
     <a href="#/feeds/<%=feed.id%>">
       <%= feed.escape("title") %>
     </a>

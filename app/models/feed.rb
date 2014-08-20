@@ -7,6 +7,7 @@ class Feed < ActiveRecord::Base
 
   def self.find_or_create_by_url(url)
     feed = Feed.find_by_url(url)
+
     return feed if feed
 
     begin
@@ -44,5 +45,11 @@ class Feed < ActiveRecord::Base
     self.reload if self.updated_at < 30.seconds.ago
 
     self.entries
+  end
+
+  private
+
+  def set_favorite
+    self.favorite ||= false
   end
 end

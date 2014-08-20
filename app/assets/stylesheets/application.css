@@ -96,3 +96,13 @@ footer li {
   margin: 20px;
 }
 
+.fav-star {
+  color: #B7B402;
+  font-size: 20px;
+}
+
+.fav-star:hover {
+  cursor: pointer;
+  color: #990E00;
+}
+

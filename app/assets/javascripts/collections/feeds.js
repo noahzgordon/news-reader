@@ -17,6 +17,10 @@ NewsReader.Collections.Feeds = Backbone.Collection.extend({
     }
 
     return feed;
+  },
+
+  comparator: function(feed1){
+    return !feed1.get('favorite') ? 1 : -1
   }
 
 });

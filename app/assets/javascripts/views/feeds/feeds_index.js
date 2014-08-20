@@ -7,7 +7,8 @@ NewsReader.Views.FeedsIndex = Backbone.View.extend({
   },
 
   events: {
-    'click #delete-button' : 'delete'
+    'click #delete-button' : 'delete',
+    'click .fav-star' : 'toggleFavorite'
   },
 
   render: function(){
@@ -20,6 +21,19 @@ NewsReader.Views.FeedsIndex = Backbone.View.extend({
   delete: function(){
     var id = $(event.target).attr("data-id");
     NewsReader.Collections.feeds.getOrFetch(id).destroy();
+  },
+
+  toggleFavorite: function(){
+    var id = $(event.target).attr("data-id");
+    var feed = NewsReader.Collections.feeds.getOrFetch(id)
+    if (!feed.get("favorite")){
+      feed.set("favorite", true);
+    } else {
+      feed.set("favorite", false);
+    }
+    feed.save({},{
+      wait: true
+    });
   }
 
 });

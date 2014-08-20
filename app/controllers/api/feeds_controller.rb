@@ -18,6 +18,15 @@ class Api::FeedsController < ApplicationController
     end
   end
 
+  def update
+    feed = current_user.feeds.find(params[:id])
+    if feed.update(feed_params)
+      render :json => feed
+    else
+      render :json => feed.errors, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     feed = current_user.feeds.find(params[:id])
 
@@ -31,6 +40,6 @@ class Api::FeedsController < ApplicationController
   private
 
   def feed_params
-    params.require(:feed).permit(:title, :url)
+    params.require(:feed).permit(:title, :url, :favorite)
   end
 end
