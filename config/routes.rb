@@ -5,5 +5,8 @@ NewReader::Application.routes.draw do
     end
   end
 
+  resources :users, only: [:create, :new]
+  resource :session, only: [:create, :new, :destroy]
+
   root to: "static_pages#index"
 end
