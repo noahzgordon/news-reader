@@ -22,4 +22,3 @@ NewsReader.Collections.Feeds = Backbone.Collection.extend({
 });
 
 NewsReader.Collections.feeds = new NewsReader.Collections.Feeds();
-NewsReader.Collections.feeds.fetch();

@@ -3,5 +3,6 @@
     <a href="#/feeds/<%=feed.id%>">
       <%= feed.escape("title") %>
     </a>
+    <button id="delete-button" data-id="<%= feed.id %>">Delete</button>
   </li>
 <% }); %>
