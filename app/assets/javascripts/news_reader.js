@@ -1,13 +1,14 @@
-window.NewReader = {
+window.NewsReader = {
   Models: {},
   Collections: {},
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new NewsReader.Routers.Feeds();
+    Backbone.history.start();
   }
 };
 
 $(document).ready(function(){
-  NewReader.initialize();
+  NewsReader.initialize();
 });
