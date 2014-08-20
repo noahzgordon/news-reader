@@ -1,11 +1,5 @@
 <h1><%= feed.escape("title") %></h1>
 
-<ul>
-  <% feed.entries().each(function(entry) { %>
-    <li><strong><%= entry.escape("created_at").slice(11, -5) %>:</strong>
-      <%= entry.escape("title") %></li>
-
-  <% }) %>
-</ul>
+<ul id="entries"></ul>
 
 <button id="refresh-button">Refresh</button>
